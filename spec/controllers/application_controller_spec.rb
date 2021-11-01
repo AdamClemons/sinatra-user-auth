@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe "ApplicationController" do
   describe "homepage: GET /" do
@@ -49,6 +50,7 @@ describe "ApplicationController" do
   describe "user's homepage: GET /users/home" do
     
     it "responds with a 200 status code" do
+      # binding.pry
       @user = User.create(:name => "Bitsy Flipsy", :email => "bitsy@hogwarts.edu", :password => "luminosity")
       visit 'sessions/login'
       fill_in(:email, :with => "bitsy@hogwarts.edu")
